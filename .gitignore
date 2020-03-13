@@ -1,0 +1,7 @@
+data/
+docs/
+results/figures
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
