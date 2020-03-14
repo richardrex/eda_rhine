@@ -1,6 +1,6 @@
 data/
 docs/
-results/figures
+results/figures/
 .Rproj.user
 .Rhistory
 .RData
