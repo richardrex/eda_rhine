@@ -1,0 +1,23 @@
+explorers question
+1) 185000km^2
+4)
+a)
+All models indicate the same trends in the changes: higher winter discharge as a result of intensiﬁed snow-melt and increased winter precipitation, and lower summer discharge due to the reduced winter snow storage and an increase of evapotranspiration
+b)
+Along a bottom-up line, have been developed different hydrological models with hourly and daily time steps for representative sub-catchments of the Rhine basin. Along a topdown line,  has been developed a water balance model for the entire Rhine basin , which calculates monthly discharges and which was tested on the scale of the major tributaries
+These can be attributed to different physical characteristics of the studied areas, but different spatial and temporal scales used in the modelling and different representations of several hydrological processes are responsible for the differences found as well
+c)
+Climate change may potentially have major consequences for the use and water management of the River Rhine. The Rhine basin measures 185,000 km2 and includes densely populated areas. The river is of great economic and environmental importance. It is the busiest waterway for inland navigation in Europe, and its water is used for a wide range of sectors, such as hydropower generation, agriculture, industry and domestic water use. The Rhine river system also constitutes a major transnational ecological corridor. The major ﬂ oods in 1993 and 1995 that caused huge damages along the entire river and dry summers in recent years have revealed the vulnerability of water management systems to changes in hydrological regime of the Rhine. Regarding the potentially large socio-economic impacts, it has become recognized that climate induced changes in the discharge regime of the Rhine should become factored into water management and so the need for impact assessment has arisen. So thats why this acrticle is really essential for ecomonic and invironment
+d)
+https://link.springer.com/article/10.1007/s11269-015-1149-x -Impacts of Climatic Change on Hydrological Regime in the Three-River Headwaters Region, China, 1960-2009
+https://iahr.tandfonline.com/doi/full/10.1080/07900627.2015.1030494#.Xosj3UBuKUk - Impact of climate change on the hydrological regime of the Indus, Ganges and Brahmaputra river basins: a review of the literature
+https://link.springer.com/article/10.1023/B:WARM.0000049142.95583.98 -Impact of Climate Change on Water Resources in the Tarim River Basin
+https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1477-8947.1997.tb00686.x -Integrated water management for the Rhine river basin, from pollution prevention to ecosystem improvement
+there are a lot of article about impact on climate changes on hydrological regimes
+e)
+Yes , there are some new about low and high flow events of Rhine since 2000
+i found just news from 2018 in New York Times - https://www.nytimes.com/2018/11/04/world/europe/rhine-drought-water-level.html
+https://www.bloomberg.com/news/articles/2019-04-10/rhine-river-could-run-too-low-again-for-shipping-in-germany
+https://www.cnbc.com/2019/07/31/low-water-levels-in-the-river-rhine-could-create-havoc-for-germanys-economy.html
+https://cen.acs.org/business/economy/Low-flowing-Rhine-shuts-BASF/96/i48
+most of news about low flows of Rhine , i havent find any news or articles about high flow events
