@@ -7,4 +7,3 @@ Workflow: Follow numbering of scripts in folder 'code'.
 Script description:
 
 00_init.R Creates necessary folders, not available in the repo (omited by .gitignore).
-01_import.R Transforms data from text to R objects and saves them accordingly. 
