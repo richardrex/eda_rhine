@@ -24,3 +24,23 @@ plot1 <- ggplot(runoff_month ,
   facet_wrap(~ sname, scales = 'free')
 plot1
 
+
+runoff_year <- runoff_year[value >= 0]  
+plot2 <- ggplot(runoff_year ,
+                aes(x = date, y = value)) +
+  geom_area(fill="#67b3a2", alpha=0.5) +
+  geom_line(color="#72b3a2") +
+  geom_histogram()
+  ylab("dis") +
+  facet_wrap(~ sname, scales = 'free')
+plot2
+
+runoff_seasons <- runoff_seasons[value >= 0]  
+plot3 <- ggplot(runoff_seasons ,
+                aes(x = date, y = value)) +
+  geom_area(fill="#67b3a2", alpha=0.5) +
+  geom_line(color="#72b3a2") +
+  geom_boxplot()
+ylab("dis") +
+  facet_wrap(~ sname, scales = 'free')
+plot3
