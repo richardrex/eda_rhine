@@ -60,8 +60,8 @@ runoff_stations$mean_days <- runoff_stats_tidy$value[1:17]
 runoff_stations
 ggplot(runoff_stations, aes(x = mean_days, y = area)) + 
   geom_point(aes( size=alt_class, col = area_class)) +
-  xlim(c(0, 3000)) + 
-  ylim(c(0, 200000)) + 
+  xlim(c(0, 2000)) + 
+  ylim(c(0, 150000)) + 
   labs(subtitle="runoff / area", 
        y="area", 
        x="mean runoff per day", 
