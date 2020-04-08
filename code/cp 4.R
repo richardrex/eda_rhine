@@ -90,3 +90,11 @@ ggplot(to_plot, aes(x = mean_day, y = area, col = sname, cex = alt_class)) +
   geom_point() +
   scale_color_manual(values = colorRampPalette(colset_4)(n_stations)) +
   theme_bw()
+saveRDS(runoff_summary, './data/runoff_summary.rds')
+saveRDS(runoff_stats, './data/runoff_stats.rds')
+saveRDS(runoff_day, './data/runoff_day.rds')
+saveRDS(runoff_month, './data/runoff_month.rds')
+saveRDS(runoff_summer, './data/runoff_summer.rds')
+saveRDS(runoff_winter, './data/runoff_winter.rds')
+saveRDS(runoff_year, './data/runoff_year.rds')
+
