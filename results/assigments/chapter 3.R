@@ -61,10 +61,11 @@ runoff_day[, list(avg=mean(value)), by=sname]
 
 avg_runoff_stations <- runoff_day[, .(mean_runoff = mean(value)), by = sname]
 avg_runoff_stations <- avg_runoff_stations[, mean_runoff := round(mean_runoff, 3)]
-sname_plot <- ggplot(aver_runoff_stations, aes(x = sname, y = mean_runoff)) +
+it_snameplot <- ggplot(aver_runoff_stations, aes(x = sname, y = mean_runoff)) +
   geom_bar(stat = "identity", width = 0.4)
 
-print(sname_plot + labs(title = "Average runoff per station", x = "Station", y = "Mean runoff (m³)"))
+print(it_snameplot + labs(title = "Average runoff per station", x = "Station", y = "Mean runoff "))
+print(it_snameplot + labs(title = "Average runoff per station", x = "Station", y = "Mean runoff "))
 #4: if we speak about currnt sitiation , area and altitude havent got any relationships
 
 
