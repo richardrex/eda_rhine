@@ -33,8 +33,8 @@ p2 + geom_point(aes(color=altitude)) +
 #4
 runoff_day <- readRDS('./data/runoff_day_raw.rds')
 
-p3 <- ggplot(data = runoff_day, aes(x = sname, y = date, color=sname))
-p3 + geom_boxplot()
+p3_1 <- ggplot(data = runoff_day, aes(x = sname, y = date, color=sname))
+p3_1 + geom_boxplot()
 ######################$$$$$$$###################
 ###Explorer questions###
 
@@ -55,14 +55,16 @@ average_runoff
 
 
 #3:
+head(runoff_day)
 
-runoff_average <- data.table(aggregate(runoff_day[,4],list(runoff_day$sname), mean))
-colnames(runoff_average) <- c('Name','Value')
-runoff_average
-p4_1 <- ggplot(data = runoff_average, aes(x = Value, y = Name, color = Name))
-p4_1 + geom_point()
+runoff_day[, list(avg=mean(value)), by=sname]
 
+avg_runoff_stations <- runoff_day[, .(mean_runoff = mean(value)), by = sname]
+avg_runoff_stations <- avg_runoff_stations[, mean_runoff := round(mean_runoff, 3)]
+sname_plot <- ggplot(aver_runoff_stations, aes(x = sname, y = mean_runoff)) +
+  geom_bar(stat = "identity", width = 0.4)
 
-#4: if we speak about current sitiation , area and altitude havent got any relationships
+print(sname_plot + labs(title = "Average runoff per station", x = "Station", y = "Mean runoff (m³)"))
+#4: if we speak about currnt sitiation , area and altitude havent got any relationships
 
 
