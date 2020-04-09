@@ -40,7 +40,7 @@ ggplot(runoff_month_key, aes(month, value, fill = period)) +
   ylab(label = "Runoff") +
   theme_bw()
 ###We can stations BASR and KOEL have runoff increased after 2000.
-#BTW for stations DOMA we can se runoff decreased after 2000
+###BTW for stations DOMA we can se runoff decreased after 2000.
 
 
 ###2 -still thinking 
