@@ -105,6 +105,6 @@ ggplot(runoff_winter[year > 1950 & year < 2010], aes(x = year, y = value_norm, c
   xlab(label = "Year") +
   ylab(label = "Runoff ") +
   theme_bw()
-# The linear plots show more straight-forward lines .This indicates that analysis might be oversimplified
+# The linear plots show more straight-forward lines .This indicates that analysis might be simplified and with more unclear variables
 
 
