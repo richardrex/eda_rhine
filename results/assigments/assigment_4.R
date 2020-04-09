@@ -76,7 +76,9 @@ ggplot(runoff_month, aes(x = factor(month), y = value,)) +
   facet_wrap(~ sname, scales = 'free',) + 
   theme_bw()
 
-
+ggplot(to_plot, aes(x = sname, y = max_day, group=sname))+
+  geom_boxplot(fill='blue', alpha=0.2)+
+  xlab('station')
 
 
 
