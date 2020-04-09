@@ -39,6 +39,10 @@ ggplot(runoff_month_key, aes(month, value, fill = period)) +
   xlab(label = "Month") +
   ylab(label = "Runoff") +
   theme_bw()
+###We can stations BASR and KOEL have runoff increased after 2000.
+#BTW for stations DOMA we can se runoff decreased after 2000
+
+
 ###2 -still thinking 
 runoff_day <- readRDS("./data/runoff_day_raw.rds")
 
@@ -46,7 +50,7 @@ runoff_day <- readRDS("./data/runoff_day_raw.rds")
 runoff_day <- runoff_day[value>0]
 head(runoff_day)
 list(runoff_day)
-
+q_1 <-runoff_day[]
 
 
 
