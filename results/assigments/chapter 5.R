@@ -43,18 +43,30 @@ ggplot(runoff_month_key, aes(month, value, fill = period)) +
 ###BTW for stations DOMA we can se runoff decreased after 2000.
 
 
-###2 -still thinking 
-runoff_day <- readRDS("./data/runoff_day_raw.rds")
+###2 
+runoff_day <- readRDS('./data/runoff_day.rds')
+runoff_day[, quantile := cut(value,
+                             breaks = quantile(value, probs = seq(0, 1, by = 1/10)),
+                             labels = 1:10, right = FALSE)]
 
+low_day <- runoff_day[, quantile == 1]
+high_day <- runoff_day[, quantile ==9]
 
-runoff_day <- runoff_day[value>0]
-head(runoff_day)
-list(runoff_day)
-q_1 <-runoff_day[]
+runoff_day[quantile == 1, by = sname, .N]
+runoff_day[quantile == 9, by = sname, .N]
 
+runoff_month <- readRDS('./data/runoff_month.rds')
+runoff_month[, quantile := cut(value,
+                               breaks = quantile(value, probs = seq(0, 1, by = 1/10)),
+                               labels = 1:10, right = FALSE)]
+low_month <- runoff_month[, quantile == 1]
+high_month <- runoff_month[, quantile == 9]
 
+runoff_month[quantile == 1, by = sname, .N]
+runoff_month[quantile == 9, by = sname, .N]
 
-
+runoff_month[quantile == 1, by = month, .N]
+runoff_month[quantile == 9, by = month, .N]
 ###3
 
 runoff_winter[, value_norm := scale(value), sname]
