@@ -1,9 +1,4 @@
-Code for the course of Exploratory Data Analysis of the Bachelor of Environmental Data Science.
-
-Analysis hypothesis: The hydroclimatic changes predicted by Middelkoop et al. (2001) are happening across the Rhine basin.
-
-Workflow: Follow numbering of scripts in folder 'code'.
-
-Script description:
-
-00_init.R Creates necessary folders, not available in the repo (omited by .gitignore).
+Environmantal Data Analyze project about Rhine river
+Here we are converted all data to tidy format and made some data manipulations 
+In /results/assigments u can find R MarkDown project 
+Fully done it will be until 1 st of June
