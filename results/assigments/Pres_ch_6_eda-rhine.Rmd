@@ -27,7 +27,7 @@ knitr::opts_chunk$set(echo = TRUE)
 getwd()
 ```
 
-# Exploratory data analysis
+# Exploratory data analysis(EDA)
 
 
 
@@ -37,7 +37,7 @@ In this presentation I will show the main data manipulations and some final resu
 
 
 
-## Summary statistics plotted
+## Sum of statistics plotted
 This table shows a graphs of total statistics of all stations over the period of all data collected, it shows the spread of the data . 
 
 
@@ -57,7 +57,7 @@ ggplot(runoff_stats_tidy, aes(x = sname, y = value, shape = "cyl", color = "cyl"
 
 
 
-## Summary of values
+## Sum of values
 
 
 
@@ -73,7 +73,7 @@ knitr::kable(runoff_stats_tidy, caption = "summary statistics", digits = 0)
 
 
 
-## Analysis of specifc stations for each month
+## Analysis of 3 stations for each month
 This plot shows changes in total  runoff during month at different points of altitude along the river, DOMA and BASR are at higher altitudes, while KOEL is at a lower altitude, in the results it is easy to show the greater divergence of the mean at stations with higher altitude,(smaller in summer, greater in winter), this holds true for all stations. in this ploblem we took 3 stations DOMA BASR and KOEL
 
 
@@ -100,7 +100,7 @@ ggplot(runoff_month_key, aes(factor(month), value, fill = period)) +
 
 
 
-## Average run off at specific stations 
+## Average run off at the same stations 
 The same 3 stations that in previous plot. After 2000
 We can see little changes between pre and after 2000
 
