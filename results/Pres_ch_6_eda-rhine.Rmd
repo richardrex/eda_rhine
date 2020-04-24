@@ -1,0 +1,120 @@
+---
+title: "Environmental Data Analysis "
+author: "Egor Suslin"
+date: "20.04.2020"
+output: 
+  html_document:
+    toc: true
+    number_sections: true
+    theme: united
+    pandoc_args: 
+      ["--number-sections",
+      "--number-offset=1"]
+---
+
+```{r, include = FALSE}
+library(data.table)
+library(ggplot2)
+library(dplyr)
+library(plotly)
+library("RColorBrewer")
+```
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, include = FALSE}
+getwd()
+```
+
+# Exploratory data analysis
+
+
+
+During our week course of EDA i worked with big amount of data. 
+We were provided with a database of the river Rhine.
+In this presentation I will show the main data manipulations and some final results of the changes
+
+
+
+## Summary of values
+
+
+
+```{r runoff_day_raw, echo = FALSE}
+runoff_stats <- readRDS("C:/Users/42077/Documents/eda_rhine/data/runoff_stats.rds")
+runoff_day <- readRDS("C:/Users/42077/Documents/eda_rhine/data/runoff_day_raw.rds")
+runoff_month <- readRDS("C:/Users/42077/Documents/eda_rhine/data/runoff_month.rds")
+runoff_stations <- readRDS("C:/Users/42077/Documents/eda_rhine/data/runoff_stations_raw.rds")
+runoff_stats$median <- runoff_day[,median(value), by = sname][,2]
+runoff_stats_tidy <- melt(runoff_stats, id.vars = 'sname', by = sname)
+knitr::kable(runoff_stats_tidy, caption = "summary statistics", digits = 0)
+```
+
+
+
+
+## Stations dates pre and after 2000
+With this plots easy to show and work with max and min run off for the whole period of time
+
+```{r, echo = FALSE, fig.width = 25, fig.height = 6}
+runoff_month <- readRDS("C:/Users/42077/Documents/eda_rhine/data/runoff_month.rds")
+runoff_month <- runoff_month[value >= 0]
+runoff_month[1:3654,3] <- "REES"
+runoff_month <- runoff_month[sname != "<NA>"]
+p <- runoff_month %>%
+  ggplot( aes(x = date, y = value)) +
+  geom_area(fill="#23A58F", alpha=0.5) +
+  geom_line(color="#23F014") +
+  ylab("discharge") +
+  facet_wrap(~ sname, scales = 'free')
+p <- ggplotly(p)
+p
+```
+
+
+
+
+## Analysis of stations for each month
+This plot shows changes in total  runoff during month at different points of altitude along the river, DOMA and BASR are at higher altitudes, while KOEL is at a lower altitude, in the results it is easy to show the greater divergence of the mean at stations with higher altitude,(smaller in summer, greater in winter), this holds true for all stations. in this ploblem we took 3 stations DOMA BASR and KOEL
+
+
+
+```{r, echo = FALSE}
+runoff_month_key <- readRDS("C:/Users/42077/Documents/eda_rhine/data/runoff_month_key.rds")
+runoff_year_key <- readRDS("C:/Users/42077/Documents/eda_rhine/data/runoff_year_key.rds")
+colset_4 <-  c("#14F0CC", "#AF6666", "#5A0F0F", "#FF66FF")
+year_thres <- 2000
+runoff_year_key <- runoff_year_key[value >= 0]  
+runoff_month_key <- runoff_month_key[value >= 0]  
+runoff_year_key[year < year_thres, period := factor('_2000')]
+runoff_year_key[year >= year_thres, period := factor('_2000')]
+runoff_month_key[year < year_thres, period := factor('_2000')]
+runoff_month_key[year >= year_thres, period := factor('_2000')]
+ggplot(runoff_month_key, aes(factor(month), value, fill = period)) +
+  geom_boxplot() +
+  facet_wrap(~sname, scales = 'free_y') +
+  scale_fill_manual(values = colset_4[c(4, 1)]) +
+  xlab(label = "time period") +
+  ylab(label = "Runoff") +
+  theme_bw()
+```
+
+
+
+## Average run off at specific stations 
+The same 3 stations that in previous plot. After 2000
+We can see little changes between pre and after 2000
+
+
+
+```{r, echo=FALSE}
+ggplot(runoff_month_key, aes(period, value, fill = period)) +
+  geom_boxplot() +
+  facet_wrap(~sname, scales = 'free_y') +
+  scale_fill_manual(values = colset_4[c(4, 1)]) +
+  xlab(label = "time period") +
+  ylab(label = "Runoff") +
+  theme_bw()
+```
